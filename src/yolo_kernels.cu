@@ -10,7 +10,7 @@ extern "C" {
 #include "parser.h"
 #include "box.h"
 #include "image.h"
-#include <sys/time.h>
+#include "sys_time.h"
 }
 
 #ifdef OPENCV

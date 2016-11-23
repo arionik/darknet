@@ -70,7 +70,7 @@ void resize_cost_layer(cost_layer *l, int inputs)
 #endif
 }
 
-void forward_cost_layer(cost_layer l, network_state state)
+void forward_cost_layer(const cost_layer l, network_state state)
 {
     if (!state.truth) return;
     if(l.cost_type == MASKED){

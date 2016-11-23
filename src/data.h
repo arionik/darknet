@@ -1,6 +1,6 @@
 #ifndef DATA_H
 #define DATA_H
-#include <pthread.h>
+#include "pthread.h"
 
 #include "matrix.h"
 #include "list.h"

@@ -361,7 +361,7 @@ int main(int argc, char **argv)
     if(find_arg(argc, argv, "-nogpu")) {
         gpu_index = -1;
     }
-
+	
 #ifndef GPU
     gpu_index = -1;
 #else
@@ -386,8 +386,8 @@ int main(int argc, char **argv)
         test_detector("cfg/coco.data", argv[2], argv[3], filename, thresh);
     } else if (0 == strcmp(argv[1], "cifar")){
         run_cifar(argc, argv);
-    } else if (0 == strcmp(argv[1], "go")){
-        run_go(argc, argv);
+    //} else if (0 == strcmp(argv[1], "go")){
+    //    run_go(argc, argv);
     } else if (0 == strcmp(argv[1], "rnn")){
         run_char_rnn(argc, argv);
     } else if (0 == strcmp(argv[1], "vid")){

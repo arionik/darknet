@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug CPU|x64">
+      <Configuration>Debug CPU</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FDA51B2B-4739-624B-9D68-F8D0D7EAEA19}</ProjectGuid>
+    <RootNamespace>darknet</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>darknet</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">
+    <TargetName>darknet</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>darknet</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>CUDNN;_CRT_SECURE_NO_WARNINGS;DEBUG;GPU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)darknet.pdb</ProgramDataBaseFileName>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4305;4244;4267;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;EBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)darknet.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <AdditionalDependencies>cudnn.lib;cuda.lib;cudart.lib;cublas.lib;curand.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)darknet.pdb</ProgramDataBaseFileName>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4305;4244;4267;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;EBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)darknet.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <AdditionalDependencies>cuda.lib;cudart.lib;cublas.lib;curand.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>CUDNN;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4305;4244;4267;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)darknet.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <AdditionalDependencies>cudnn.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\activations.h" />
+    <ClInclude Include="src\activation_layer.h" />
+    <ClInclude Include="src\avgpool_layer.h" />
+    <ClInclude Include="src\batchnorm_layer.h" />
+    <ClInclude Include="src\blas.h" />
+    <ClInclude Include="src\box.h" />
+    <ClInclude Include="src\classifier.h" />
+    <ClInclude Include="src\col2im.h" />
+    <ClInclude Include="src\connected_layer.h" />
+    <ClInclude Include="src\convolutional_layer.h" />
+    <ClInclude Include="src\cost_layer.h" />
+    <ClInclude Include="src\crnn_layer.h" />
+    <ClInclude Include="src\crop_layer.h" />
+    <ClInclude Include="src\cuda.h" />
+    <ClInclude Include="src\data.h" />
+    <ClInclude Include="src\deconvolutional_layer.h" />
+    <ClInclude Include="src\demo.h" />
+    <ClInclude Include="src\detection_layer.h" />
+    <ClInclude Include="src\dropout_layer.h" />
+    <ClInclude Include="src\gemm.h" />
+    <ClInclude Include="src\gru_layer.h" />
+    <ClInclude Include="src\im2col.h" />
+    <ClInclude Include="src\image.h" />
+    <ClInclude Include="src\layer.h" />
+    <ClInclude Include="src\list.h" />
+    <ClInclude Include="src\local_layer.h" />
+    <ClInclude Include="src\matrix.h" />
+    <ClInclude Include="src\maxpool_layer.h" />
+    <ClInclude Include="src\network.h" />
+    <ClInclude Include="src\normalization_layer.h" />
+    <ClInclude Include="src\option_list.h" />
+    <ClInclude Include="src\parser.h" />
+    <ClInclude Include="src\pthread.h" />
+    <ClInclude Include="src\region_layer.h" />
+    <ClInclude Include="src\reorg_layer.h" />
+    <ClInclude Include="src\rnn_layer.h" />
+    <ClInclude Include="src\route_layer.h" />
+    <ClInclude Include="src\server.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\shortcut_layer.h" />
+    <ClInclude Include="src\softmax_layer.h" />
+    <ClInclude Include="src\stb_image.h" />
+    <ClInclude Include="src\stb_image_write.h" />
+    <ClInclude Include="src\sys_time.h" />
+    <ClInclude Include="src\tree.h" />
+    <ClInclude Include="src\unistd.h" />
+    <ClInclude Include="src\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\activations.c">
+    </ClCompile>
+    <ClCompile Include="src\activation_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\art.c">
+    </ClCompile>
+    <ClCompile Include="src\avgpool_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\batchnorm_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\blas.c">
+    </ClCompile>
+    <ClCompile Include="src\box.c">
+    </ClCompile>
+    <ClCompile Include="src\captcha.c">
+    </ClCompile>
+    <ClCompile Include="src\cifar.c">
+    </ClCompile>
+    <ClCompile Include="src\classifier.c">
+    </ClCompile>
+    <ClCompile Include="src\coco.c">
+    </ClCompile>
+    <ClCompile Include="src\col2im.c">
+    </ClCompile>
+    <ClCompile Include="src\compare.c">
+    </ClCompile>
+    <ClCompile Include="src\connected_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\convolutional_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\cost_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\cpu_gemm.c">
+    </ClCompile>
+    <ClCompile Include="src\crnn_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\crop_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\cuda.c">
+    </ClCompile>
+    <ClCompile Include="src\darknet.c">
+    </ClCompile>
+    <ClCompile Include="src\data.c">
+    </ClCompile>
+    <ClCompile Include="src\deconvolutional_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\demo.c">
+    </ClCompile>
+    <ClCompile Include="src\detection_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\detector.c">
+    </ClCompile>
+    <ClCompile Include="src\dice.c">
+    </ClCompile>
+    <ClCompile Include="src\dropout_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\gemm.c">
+    </ClCompile>
+    <ClCompile Include="src\go.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\gru_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\im2col.c">
+    </ClCompile>
+    <ClCompile Include="src\image.c">
+    </ClCompile>
+    <ClCompile Include="src\layer.c">
+    </ClCompile>
+    <ClCompile Include="src\list.c">
+    </ClCompile>
+    <ClCompile Include="src\local_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\matrix.c">
+    </ClCompile>
+    <ClCompile Include="src\maxpool_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\network.c">
+    </ClCompile>
+    <ClCompile Include="src\nightmare.c">
+    </ClCompile>
+    <ClCompile Include="src\normalization_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\option_list.c">
+    </ClCompile>
+    <ClCompile Include="src\parser.c">
+    </ClCompile>
+    <ClCompile Include="src\pthread.c">
+    </ClCompile>
+    <ClCompile Include="src\region_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\reorg_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\rnn.c">
+    </ClCompile>
+    <ClCompile Include="src\rnn_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\rnn_vid.c">
+    </ClCompile>
+    <ClCompile Include="src\route_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\server.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\shortcut_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\softmax_layer.c">
+    </ClCompile>
+    <ClCompile Include="src\super.c">
+    </ClCompile>
+    <ClCompile Include="src\swag.c">
+    </ClCompile>
+    <ClCompile Include="src\sys_time.c">
+    </ClCompile>
+    <ClCompile Include="src\tag.c">
+    </ClCompile>
+    <ClCompile Include="src\tree.c">
+    </ClCompile>
+    <ClCompile Include="src\utils.c">
+    </ClCompile>
+    <ClCompile Include="src\voxel.c">
+    </ClCompile>
+    <ClCompile Include="src\writing.c">
+    </ClCompile>
+    <ClCompile Include="src\yolo.c">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\activation_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\avgpool_layer_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\blas_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\col2im_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\convolutional_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\crop_layer_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\deconvolutional_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\dropout_layer_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\im2col_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\maxpool_layer_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\network_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+    <CustomBuild Include="src\yolo_kernels.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-O0 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">nvcc "%(FullPath)" ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">$(IntDir)%(Filename).obj</Outputs>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
+      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug CPU|x64'">false</TreatOutputAsContent>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

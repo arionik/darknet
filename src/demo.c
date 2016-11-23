@@ -7,7 +7,7 @@
 #include "box.h"
 #include "image.h"
 #include "demo.h"
-#include <sys/time.h>
+#include "sys_time.h"
 
 #define FRAMES 3
 

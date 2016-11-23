@@ -4,7 +4,7 @@
 #include "option_list.h"
 #include "blas.h"
 #include "classifier.h"
-#include <sys/time.h>
+#include "sys_time.h"
 
 #ifdef OPENCV
 #include "opencv2/highgui/highgui_c.h"

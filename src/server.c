@@ -1,13 +1,14 @@
 #include <stdio.h> /* needed for sockaddr_in */
 #include <string.h> /* needed for sockaddr_in */
-#include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h> /* needed for sockaddr_in */
 #include <netdb.h>
-#include <pthread.h>
 #include <time.h>
 
+#include "unistd.h"
+
+#include "pthread.h"
 #include "mini_blas.h"
 #include "utils.h"
 #include "parser.h"
