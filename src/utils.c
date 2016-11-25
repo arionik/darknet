@@ -271,7 +271,7 @@ char *fgetl(FILE *fp)
             size *= 2;
             line = realloc(line, size*sizeof(char));
             if(!line) {
-                printf("%ld\n", size);
+                printf("%ld\n", (long)size);
                 malloc_error();
             }
         }

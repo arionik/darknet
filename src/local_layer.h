@@ -10,7 +10,7 @@
 typedef layer local_layer;
 
 #ifdef GPU
-void forward_local_layer_gpu(local_layer layer, network_state state);
+void forward_local_layer_gpu(const local_layer layer, network_state state);
 void backward_local_layer_gpu(local_layer layer, network_state state);
 void update_local_layer_gpu(local_layer layer, int batch, float learning_rate, float momentum, float decay);
 

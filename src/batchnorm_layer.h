@@ -11,7 +11,7 @@ void backward_batchnorm_layer(const layer l, network_state state);
 
 #ifdef GPU
 void forward_batchnorm_layer_gpu(layer l, network_state state);
-void backward_batchnorm_layer_gpu(layer l, network_state state);
+void backward_batchnorm_layer_gpu( const layer l, network_state state);
 void pull_batchnorm_layer(layer l);
 void push_batchnorm_layer(layer l);
 #endif
