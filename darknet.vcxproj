@@ -72,7 +72,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(OutDir)darknet.exe</OutputFile>
+      <OutputFile>$(TargetPath)</OutputFile>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
       <AdditionalDependencies>cudnn.lib;cuda.lib;cudart.lib;cublas.lib;curand.lib;LIBCMTD.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
@@ -148,10 +148,6 @@
     <ClInclude Include="src\reorg_layer.h" />
     <ClInclude Include="src\rnn_layer.h" />
     <ClInclude Include="src\route_layer.h" />
-    <ClInclude Include="src\server.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="src\shortcut_layer.h" />
     <ClInclude Include="src\softmax_layer.h" />
     <ClInclude Include="src\stb_image.h" />
@@ -193,8 +189,6 @@
     <ClCompile Include="src\convolutional_layer.c">
     </ClCompile>
     <ClCompile Include="src\cost_layer.c">
-    </ClCompile>
-    <ClCompile Include="src\cpu_gemm.c">
     </ClCompile>
     <ClCompile Include="src\crnn_layer.c">
     </ClCompile>
@@ -263,10 +257,6 @@
     <ClCompile Include="src\rnn_vid.c">
     </ClCompile>
     <ClCompile Include="src\route_layer.c">
-    </ClCompile>
-    <ClCompile Include="src\server.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\shortcut_layer.c">
     </ClCompile>
@@ -413,18 +403,6 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="src\network_kernels.cu">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc -G -g  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-D_WIN64 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc "%(FullPath)" ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
-      <TreatOutputAsContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</TreatOutputAsContent>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nvcc --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-D_WIN64 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nvcc "%(FullPath)" ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="src\yolo_kernels.cu">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nvcc -G -g  --gpu-architecture=compute_52 --gpu-code=compute_52  --compiler-options "-D_WIN64 -DGPU" -c %(FullPath) -o  $(IntDir)%(Filename).obj</Command>

@@ -120,9 +120,6 @@
     <ClInclude Include="src\route_layer.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\server.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\shortcut_layer.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -195,9 +192,6 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\cost_layer.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cpu_gemm.c">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\crnn_layer.c">
@@ -299,9 +293,6 @@
     <ClCompile Include="src\route_layer.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\server.c">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\shortcut_layer.c">
       <Filter>src</Filter>
     </ClCompile>
@@ -368,9 +359,6 @@
       <Filter>src\cu</Filter>
     </CustomBuild>
     <CustomBuild Include="src\network_kernels.cu">
-      <Filter>src\cu</Filter>
-    </CustomBuild>
-    <CustomBuild Include="src\yolo_kernels.cu">
       <Filter>src\cu</Filter>
     </CustomBuild>
   </ItemGroup>
