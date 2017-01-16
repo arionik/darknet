@@ -10,7 +10,9 @@ int pthread_join(pthread_t thread, void **retval) {
 
 int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg)
 {
-	thread->handle = _beginthread(start_routine, 0, arg);
+	unsigned threadID;
+	// thread->handle = _beginthread(start_routine, 0, arg);
+	thread->handle = _beginthreadex(NULL, 0, start_routine, arg, 0, &threadID);
 	return 0;
 }
 

@@ -89,7 +89,7 @@ cublasHandle_t blas_handle()
 
 float *cuda_make_array(float *x, size_t n)
 {
-    float *x_gpu;
+    float *x_gpu = 0x0;
     size_t size = sizeof(float)*n;
     cudaError_t status = cudaMalloc((void **)&x_gpu, size);
     check_error(status);
